@@ -10,10 +10,6 @@ var _getIterator3 = _interopRequireDefault(_getIterator2);
 
 exports.default = testStorySnapshots;
 
-var _reactTestRenderer = require('react-test-renderer');
-
-var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
-
 var _enzyme = require('enzyme');
 
 var _enzymeToJson = require('enzyme-to-json');
@@ -123,8 +119,6 @@ function testStorySnapshots() {
               it(story.name, function () {
                 var context = { kind: group.kind, story: story.name };
                 var renderedStory = story.render(context);
-                // const tree = renderer.create(renderedStory).toJSON();
-
                 var tree = (0, _enzymeToJson2.default)((0, _enzyme.render)(renderedStory));
                 expect(tree).toMatchSnapshot();
               });

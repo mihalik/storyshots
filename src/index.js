@@ -1,4 +1,3 @@
-import renderer from 'react-test-renderer';
 import {render} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import path from 'path';
@@ -73,8 +72,6 @@ export default function testStorySnapshots(options = {}) {
           it(story.name, () => {
             const context = { kind: group.kind, story: story.name };
             const renderedStory = story.render(context);
-            // const tree = renderer.create(renderedStory).toJSON();
-
             const tree = toJson(render(renderedStory));
             expect(tree).toMatchSnapshot();
           });

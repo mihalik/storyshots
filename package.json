@@ -32,7 +32,6 @@
     "read-pkg-up": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-test-renderer": "*"
+    "react": "*"
   }
 }
