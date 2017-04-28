@@ -1,4 +1,6 @@
-# StoryShots [![CircleCI](https://circleci.com/gh/storybooks/storyshots.svg?style=shield)](https://circleci.com/gh/storybooks/storyshots)
+# StoryShots
+
+## This is a fork of StoryShots to use [enzyme](https://github.com/airbnb/enzyme) as a renderer rather than react-test-renderer
 
 Jest Snapshot Testing for [Storybook](https://getstorybook.io/).<br/>
 (Supports both [React](https://github.com/storybooks/react-storybook) and [React Native](https://github.com/storybooks/react-native-storybook) Storybook)
