@@ -1,4 +1,6 @@
 import renderer from 'react-test-renderer';
+import {render} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import path from 'path';
 import readPkgUp from 'read-pkg-up';
 import addons from '@kadira/storybook-addons';
@@ -71,7 +73,9 @@ export default function testStorySnapshots(options = {}) {
           it(story.name, () => {
             const context = { kind: group.kind, story: story.name };
             const renderedStory = story.render(context);
-            const tree = renderer.create(renderedStory).toJSON();
+            // const tree = renderer.create(renderedStory).toJSON();
+
+            const tree = toJson(render(renderedStory));
             expect(tree).toMatchSnapshot();
           });
         }
